@@ -6,7 +6,7 @@
 - Balance of dataset
 - Handling imbalance
 - Distribution
-
+- One-hot encoding
 
 `
 - NNs

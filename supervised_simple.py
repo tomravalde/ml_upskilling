@@ -91,10 +91,10 @@ def train_evaluate_model(model, X_train, y_train, X_test, y_test, model_name):
     plt.show()
 
 
-
 # Loop over different input datasets
 df_full = pd.read_csv('winequality-red.csv', sep=',')
-df_missing = pd.read_csv('winequality-red.csv', sep=',')
+df_missing = pd.read_csv('winequality-red-missing-data.csv', sep=',')
+df_imputed = pd.read_csv('winequality-red-imputed.csv', sep=',')
 
 # for df in [df_full, df_missing]:
 for df in [df_missing]:
@@ -126,7 +126,25 @@ for df in [df_missing]:
 
     # Random Forest with SMOTE
     print("\nRandom Forest with SMOTE")
-    train_evaluate_model(rf_model, X_train_res, y_train_res, X_test, y_test, "Random Forest")
+    train_evaluate_model(rf_model, X_train_res, y_train_res, X_test, y_test,
+                         "Random Forest with SMOTE")
+
+    # Random Forest with class weights
+    """
+    Adjust the Gini to scale the contribution of each class to the impurity calculation. This will 
+    modify the splitting criteria.
+    
+    Balanced: weights are inversely proportional to class frequencies, so minority classes are 
+        up-weighted
+        
+    (Can also specify custom weights)
+    """
+
+    print("\nRandom Forest with class weights")
+    rf_weighted = RandomForestClassifier(n_estimators=100, class_weight='balanced',
+                                         random_state=42)
+    train_evaluate_model(rf_weighted, X_train, y_train, X_test, y_test,
+                         "Random Forest with class weights")
 
     # # Support Vector Machine
     # print("\nSupport Vector Machine")
