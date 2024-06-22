@@ -49,5 +49,3 @@ print(df_missing.head())
 
 # Save for use elsewhere
 df_missing.to_csv('winequality-red-missing-data.csv', index=False)
-
-# TODO: Create imbalanced dataset
