@@ -1,10 +1,19 @@
 # README
 
+- Data cleaning
+  - interpolating
+
+- Balance of dataset
+- Handling imbalance
+- Distribution
+
+
+`
 - NNs
   - Conv
   - Recurrent
   - Keras
-  - TensorFlow
+`  - TensorFlow
 
 - Scaling
 - ROC Curves

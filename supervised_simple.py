@@ -1,4 +1,3 @@
-import numpy
 import pandas as pd
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler
@@ -10,7 +9,6 @@ from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.datasets import load_iris
 
 
 # Load Wine Quality dataset
@@ -19,15 +17,6 @@ df = pd.read_csv('winequality-red.csv', sep=';')
 # Convert quality to binary classification (good: quality >= 7, bad: quality < 7)
 df['target'] = (df['quality'] >= 7).astype(int)
 df = df.drop('quality', axis=1)
-
-# # Load Iris dataset
-# iris = load_iris()
-# df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
-# df['target'] = iris.target
-#
-# # Filter the dataset to only include two classes
-# # (class 0: setosa; and class 1: versicolor)
-# df = df[df['target'] != 2]
 
 # Data Preprocessing
 X = df.drop('target', axis=1)
