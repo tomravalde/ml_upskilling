@@ -38,10 +38,10 @@ collection.add_dataframe("raw", df)
 ###################################################################################################
 
 df['target'] = (df['quality'] >= 7).astype(int)
-df = df.drop('quality', axis=1)
-df.to_csv('winequality-red.csv', index=False)
+# df = df.drop('quality', axis=1)
 
 # Store
+df.to_csv('winequality-red.csv', index=False)
 collection.add_dataframe("raw_with_target", df)
 
 

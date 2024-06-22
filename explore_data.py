@@ -6,13 +6,13 @@ import matplotlib.pyplot as plt
 from retrieve_and_create_data import collection
 
 # Load the dataset (comment out as necessary)
-# df = collection.get_dataframe("raw_with_target")
-# df = collection.get_dataframe("missing_data")
-# df = collection.get_dataframe("clean_rows_only")
-# df = collection.get_dataframe("imputed_mean")
-# df = collection.get_dataframe("imputed_median")
-# df = collection.get_dataframe("imputed_mode")
-# df = collection.get_dataframe("imputed_constant")
+df = collection.get_dataframe("raw_with_target")
+df = collection.get_dataframe("missing_data")
+df = collection.get_dataframe("clean_rows_only")
+df = collection.get_dataframe("imputed_mean")
+df = collection.get_dataframe("imputed_median")
+df = collection.get_dataframe("imputed_mode")
+df = collection.get_dataframe("imputed_constant")
 df = collection.get_dataframe("imputed_iterative")
 
 
