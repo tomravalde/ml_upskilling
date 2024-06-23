@@ -1,23 +1,8 @@
 # README
 
-- Data cleaning
-  - interpolating
-
-- Balance of dataset
-- Handling imbalance
-- Distribution
+# TODO:
 - One-hot encoding
-
-`
-- NNs
-  - Conv
-  - Recurrent
-  - Keras
-`  - TensorFlow
-
 - Scaling
-- ROC Curves
-- Precision-Recall
 - Put curves for each model on the same chart
 - Prediction threshold, overlapping classes
 - What is a SVM?
@@ -27,4 +12,23 @@
 - NLP
 - A/B/n testing
 - Multivariate testing
+- NNs
+  - Conv
+    - Reducing overfitting
+  - Recurrent
+  - Keras
+    `  - TensorFlow
+- Output classification reports to text file
+- Check I can start a new project fresh and without problems managing packages
+
+# DONE:
+- Data cleaning
+  - interpolating
+- Balance of dataset
+- Handling imbalance
+- Distribution
+- ROC Curves
+- Precision-Recall
+
+
 - 
