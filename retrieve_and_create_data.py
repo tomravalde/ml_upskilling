@@ -38,7 +38,6 @@ collection.add_dataframe("raw", df)
 ###################################################################################################
 
 df['target'] = (df['quality'] >= 7).astype(int)
-# df = df.drop('quality', axis=1)
 
 # Store
 df.to_csv('winequality-red.csv', index=False)
@@ -92,19 +91,19 @@ collection.add_dataframe("clean_cols_only", df_clean_cols)
 
 # 3. Impute using mean
 df_filled_mean = df.fillna(df.mean())
-collection.add_dataframe("imputed_mean", df_clean_cols)
+collection.add_dataframe("imputed_mean", df_filled_mean)
 
 # 4. Impute using median
 df_filled_median = df.fillna(df.median())
-collection.add_dataframe("imputed_median", df_clean_cols)
+collection.add_dataframe("imputed_median", df_filled_median)
 
 # 5. Impute using mode (for categorical data)
 df_filled_mode = df.fillna(df.mode().iloc[0])
-collection.add_dataframe("imputed_mode", df_clean_cols)
+collection.add_dataframe("imputed_mode", df_filled_mode)
 
 # 6. Impute with a constant value
 df_filled_constant = df.fillna(-999)  # Replace -999 with your chosen constant
-collection.add_dataframe("imputed_constant", df_clean_cols)
+collection.add_dataframe("imputed_constant", df_filled_constant)
 
 # 7. Iterative imputer
 """
@@ -134,7 +133,7 @@ df_imputed.index = df.index
 
 collection.add_dataframe("imputed_iterative", df_imputed)
 
-# 8. CATEGORICAL DATA: impute usintg the mode
+# 8. CATEGORICAL DATA: impute using the mode
 # Fill missing values in categorical columns with the mode
 # categorical_columns = ['cat_column1', 'cat_column2']
 # for col in categorical_columns:
@@ -150,4 +149,3 @@ def custom_imputer(df):
     """
     # Your custom logic here
     return df
-

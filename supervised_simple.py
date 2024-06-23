@@ -10,7 +10,7 @@ from sklearn.neural_network import MLPClassifier
 import matplotlib.pyplot as plt
 import seaborn as sns
 from imblearn.over_sampling import SMOTE
-
+from retrieve_and_create_data import collection
 
 # Function to train and evaluate model
 def train_evaluate_model(model, X_train, y_train, X_test, y_test, model_name):
@@ -92,13 +92,16 @@ def train_evaluate_model(model, X_train, y_train, X_test, y_test, model_name):
 
 
 # Loop over different input datasets
-df_full = pd.read_csv('winequality-red.csv', sep=',')
-df_missing = pd.read_csv('winequality-red-missing-data.csv', sep=',')
-df_imputed = pd.read_csv('winequality-red-imputed.csv', sep=',')
+collection.remove_dataframe('clean_cols_only') # Because it is empty
+for dataset in collection.list_dataframes():
 
-# for df in [df_full, df_missing]:
-for df in [df_missing]:
+    print(f"\nDataset: {dataset}")
+
+    # TODO: Put dataset into the names of plots etc.
+
     # Data Preprocessing
+    df = collection.get_dataframe(dataset)
+    df = df.drop('quality', axis=1)
     X = df.drop('target', axis=1)
     y = df['target']
 
@@ -110,7 +113,7 @@ for df in [df_missing]:
     X_train = scaler.fit_transform(X_train)
     X_test = scaler.transform(X_test)
 
-    # Apply SMOTE to ovversample the minorty class
+    # Apply SMOTE to oversample the minority class
     smote = SMOTE(random_state=42)
     X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
 
@@ -181,11 +184,10 @@ Quantify how much each split improves a model's predictions. We add these scores
 
 best_rf_model = grid_search.best_estimator_
 feature_importances = best_rf_model.feature_importances_
-features = df.columns[:-1]
+features = df.columns[:-1]  # TODO: Check of quality is here
 
 plt.figure(figsize=(10, 6))
 sns.barplot(x=feature_importances, y=features)
 # TODO: Order by importance
 plt.title('Feature Importances')
 plt.show()
-
