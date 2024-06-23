@@ -48,4 +48,4 @@ class TestDataFrameCollection(unittest.TestCase):
         self.assertListEqual(df_list, ['first_df', 'second_df'])
 
     def test_repr(self):
-        self.collection.add_dataframe('first_df', self.df
+        self.collection.add_dataframe('first_df', self.df1)
