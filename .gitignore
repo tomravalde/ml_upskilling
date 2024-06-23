@@ -2,3 +2,4 @@ Pipfile*
 .idea/
 *.csv
 results/
+.DS_Store
