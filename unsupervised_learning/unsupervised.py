@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
 # Load the Mall Customer Segmentation Data
-df = pd.read_csv('data/Mall_Customers.csv')
+df = pd.read_csv('../data/Mall_Customers.csv')
 """
 Originally from https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python?phase=FinishSSORegistration&returnUrl=/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python/versions/1?resource=download&SSORegistrationToken=CfDJ8CHCUm6ypKVLpjizcZHPE72QCs41IsO_tML1-M6PQqRNM_loD7bOxBQDLFPB-geHPT53bYLjJzAixz1KVVy8hbxM2mI7DH8WxezbWWoSTGgfeQwz6JVj8FSjpVzGZ0vsakm4x9FnJoOve_f37_cEVlJ2qrEsqBEN3GQGuc1i2T2cDkfngVGgHMhnleTAqolxf9dqfrvoWnrLPBvAAu8IQ2jMTlVHzgl2fda3P_m0P20AC-WNnY0z0hhSFoPeVoWNUugBkczQ4X8qhUMldfuEY2IBo984DDExdK1iWEJaNLQAe-bjAwpjwtCqcehGL5CRMNvka8UEj-qED-RM59ROj9jwLA&DisplayName=Tom%20Ravalde
 """

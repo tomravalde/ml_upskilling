@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler
@@ -10,7 +11,8 @@ from sklearn.neural_network import MLPClassifier
 import matplotlib.pyplot as plt
 import seaborn as sns
 from imblearn.over_sampling import SMOTE
-from retrieve_and_create_data import collection
+from supervised_learning.retrieve_and_create_data import collection
+import shap
 
 # Function to train and evaluate model
 def train_evaluate_model(model, X_train, y_train, X_test, y_test, model_name):
@@ -179,15 +181,17 @@ criteria. If a feature used for a split does this successfully, it is important
 Quantify how much each split improves a model's predictions. We add these scores at feature-level 
 (and normalise) to get a score
 - classification: Gini impurity (how 'mixed' a group is)
-- Regression: MSE
+- regression: MSE
 """
 
 best_rf_model = grid_search.best_estimator_
 feature_importances = best_rf_model.feature_importances_
-features = df.columns[:-1]  # TODO: Check of quality is here
+features = df.columns[:-1]
 
 plt.figure(figsize=(10, 6))
 sns.barplot(x=feature_importances, y=features)
 # TODO: Order by importance
 plt.title('Feature Importances')
 plt.show()
+
+# TODO: SHAP

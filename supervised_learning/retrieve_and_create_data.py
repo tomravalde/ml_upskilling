@@ -22,14 +22,14 @@ response = requests.get(url)
 # Check if the request was successful
 if response.status_code == 200:
     # Save the content of the response to a file
-    with open('winequality-red.csv', 'wb') as file:
+    with open('data/winequality-red.csv', 'wb') as file:
         file.write(response.content)
     print("Dataset downloaded successfully.")
 else:
     print("Failed to download the dataset.")
 
 # Store
-df = pd.read_csv('winequality-red.csv', sep=';')
+df = pd.read_csv('data/winequality-red.csv', sep=';')
 collection.add_dataframe("raw", df)
 
 
@@ -40,7 +40,7 @@ collection.add_dataframe("raw", df)
 df['target'] = (df['quality'] >= 7).astype(int)
 
 # Store
-df.to_csv('winequality-red.csv', index=False)
+df.to_csv('data/winequality-red.csv', index=False)
 collection.add_dataframe("raw_with_target", df)
 
 
