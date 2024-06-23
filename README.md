@@ -12,10 +12,6 @@
 - NLP
 - A/B/n testing
 - Multivariate testing
-- NNs
-  - Conv
-    - Reducing overfitting
-  - Recurrent
   - Keras
     `  - TensorFlow
 - Output classification reports to text file
@@ -29,6 +25,10 @@
 - Distribution
 - ROC Curves
 - Precision-Recall
+- RNN
+- CNN
+
+- LLM (Bert)
 
 
 - 
