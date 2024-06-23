@@ -1,7 +1,6 @@
 # README
 
 # TODO:
-- One-hot encoding
 - Scaling
 - Put curves for each model on the same chart
 - Prediction threshold, overlapping classes
@@ -9,15 +8,13 @@
 - Testing
 - Shapley
 - Unsupervised
-- NLP
-- A/B/n testing
-- Multivariate testing
   - Keras
     `  - TensorFlow
 - Output classification reports to text file
 - Check I can start a new project fresh and without problems managing packages
 
 # DONE:
+- One-hot encoding
 - Data cleaning
   - interpolating
 - Balance of dataset
@@ -27,6 +24,9 @@
 - Precision-Recall
 - RNN
 - CNN
+- NLP
+- A/B/n testing
+- Multivariate testing
 
 - LLM (Bert)
 
