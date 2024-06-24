@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler
@@ -12,7 +11,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from imblearn.over_sampling import SMOTE
 from supervised_learning.retrieve_and_create_data import collection
-import shap
 
 # Function to train and evaluate model
 def train_evaluate_model(model, X_train, y_train, X_test, y_test, model_name):
